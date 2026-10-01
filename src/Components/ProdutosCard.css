@@ -1,0 +1,584 @@
+.card-content {
+    display: flex;
+
+}
+
+.produtos-card-content {
+    display: flex;
+    height: 180px;
+    border-radius: 10px;
+    padding: 20px;
+    background: #14181e;
+    transition: 0.3s;
+
+    animation: products-animation 0.5s ease-out both;
+
+}
+
+.produtos-card-content:hover {
+    border-color: 5px solid #4d3a9a;
+    transform: translateX(4px);
+    box-shadow: 0 0 12px rgba(102, 62, 222, 0.15);
+}
+
+
+@keyframes products-animation {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card-img {
+    flex: 5%;
+    background-color: #1d2126;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-info {
+    flex: 30%;
+    margin-left: 2rem;
+}
+
+.card-info h1 {
+    font-size: 1.3rem;
+}
+
+.card-info .category {
+    background: linear-gradient(to right,
+            #2d3498 0%,
+            #1a1b3b 50%,
+            #1f2349 100%);
+
+    background-size: 300% 100%;
+    animation: gradientMove 4s ease infinite;
+
+    border: 1px solid #c9c9c986;
+    color: #d6cece;
+    font-weight: 100;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 10px 0px 10px;
+
+    box-shadow:
+        0 0 6px rgba(201, 201, 201, 0.35),
+        0 0 14px rgba(45, 52, 152, 0.45);
+    box-shadow:
+        0 0 6px rgba(201, 201, 201, 0.35),
+        0 0 14px rgba(45, 52, 152, 0.45);
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card-info #stock {
+    font-size: 15px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(183, 183, 183);
+    ;
+}
+
+.card-info p {
+    font-size: 1.8rem;
+    color: #227259;
+    font-weight: bold;
+}
+
+.card-btn {
+    flex: 50%;
+    align-items: center;
+    justify-content: end;
+    display: flex;
+    padding-right: 3rem;
+    gap: 20px;
+}
+
+.card-btn button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+}
+
+.card-btn #edit {
+    color: #4f5aa3;
+    border: 1px solid #1d2342;
+
+    box-shadow:
+        0 0 5px #4f5aa3,
+        0 0 15px rgba(79, 90, 163, 0.4);
+
+    animation: pulseEdit 2s ease-in-out infinite;
+    transition: .2s;
+}
+
+.card-btn #edit:hover {
+    color: white;
+    background: #4f5aa3;
+    transform: scale(1.04);
+}
+
+.card-btn #clear {
+    color: #912c2c;
+    border: 1px solid #572427;
+
+    box-shadow:
+        0 0 5px #912c2c,
+        0 0 15px rgba(145, 44, 44, 0.4);
+
+    animation: pulseEdit 2s ease-in-out infinite;
+    transition: .2s;
+}
+
+
+.card-btn #clear:hover {
+    color: white;
+    background: #912c2c;
+    transform: scale(1.04);
+}
+
+
+
+@keyframes pulseClear {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 5px #912c2c,
+            0 0 25px rgba(145, 44, 44, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 10px #912c2c,
+            0 0 25px rgba(145, 44, 44, 0.7);
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.delet-content {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    background: #1d2126;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    animation: modalEntrance 0.35s ease-out both;
+}
+
+@keyframes modalEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+
+
+.delet-banner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 4px solid red;
+    padding: 10px;
+    border-radius: 50%;
+
+}
+
+
+.delet-banner svg {
+    width: 50px;
+    height: 50px;
+    color: red;
+
+}
+
+.delet-info {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.delet-info p {
+    color: #d6cece;
+}
+
+.delet-info span {
+    line-height: 2;
+    font-weight: 900;
+}
+
+.delet-arrow {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 50px;
+
+    gap: 1rem;
+}
+
+.delet-arrow button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.delet-arrow button:hover {
+    transform: scale(1.04);
+}
+
+.edit-content {
+    max-width: 600px;
+    width: 100%;
+    height: 580px;
+    background: #1d2126;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    animation: modalEntrance 0.35s ease-out both;
+}
+
+
+.edit-content .edit-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.edit-top svg {
+    cursor: pointer;
+}
+
+.edit-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-content .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-input input {
+    padding: 15px 10px;
+    background: #14181e;
+    border: none;
+    color: rgb(183, 183, 183);
+    border-radius: 5px;
+    border: 1px solid #2b3239;
+}
+
+.form-input.category {
+    position: relative;
+}
+
+
+.form-input select {
+    padding: 15px 10px;
+    background: #14181e;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #2b3239;
+
+    appearance: none;
+
+    position: relative;
+}
+
+.form-input.category::after {
+    content: "⌄";
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    pointer-events: none;
+}
+
+.form-arrow {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-arrow button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.form-arrow button:hover {
+    transform: scale(1.04);
+}
+
+@media (max-width: 834px) {
+
+
+    .produtos-card-content {
+        height: 200px;
+    }
+
+    .card-img {
+        flex: 20%;
+    }
+
+    .card-info {
+        flex: 30%;
+        margin-left: 2rem;
+    }
+
+    .card-info h1 {
+        font-size: 1.1rem;
+    }
+
+    .card-btn {
+        padding-right: 1rem;
+    }
+
+    .delet-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 440px) {
+    .produtos-card-content {
+        display: flex;
+        height: 250px;
+        position: relative;
+        padding: 5;
+
+    }
+
+    .card-img {
+        width: 120px;
+        height: 120px;
+        flex: none;
+        padding: 0;
+
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-info {
+        flex: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-info h1 {
+        font-size: 15px;
+    }
+
+    .card-info p {
+        font-size: 2rem;
+    }
+
+    .card-btn {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        left: 18%;
+        bottom: 30px;
+    }
+
+    .edit-content {
+        width: 95%;
+    }
+}
+
+/* =========================
+   TEMA CLARO - CARDS
+========================= */
+
+.produtos-card-content.claro {
+    background: #e3e3e3;
+    color: #111111;
+}
+
+.produtos-card-content.claro .card-img {
+    background: #f1f1f1;
+}
+
+.produtos-card-content.claro .card-info #stock {
+    color: #666666;
+}
+
+/* Categoria */
+
+.produtos-card-content.claro .card-info .category {
+    background: #f0f0f0;
+    color: #333333;
+    border-color: #d0d0d0;
+    box-shadow: none;
+}
+
+/* Botão editar */
+
+.produtos-card-content.claro .card-btn #edit {
+    color: #4f5aa3;
+    border-color: #c9cce5;
+    box-shadow: 0 0 5px rgba(79, 90, 163, 0.25);
+}
+
+.produtos-card-content.claro .card-btn #edit:hover {
+    background: #4f5aa3;
+    color: white;
+}
+
+/* Botão excluir */
+
+.produtos-card-content.claro .card-btn #clear {
+    color: #912c2c;
+    border-color: #e0b5b5;
+    box-shadow: 0 0 5px rgba(145, 44, 44, 0.2);
+}
+
+.produtos-card-content.claro .card-btn #clear:hover {
+    background: #912c2c;
+    color: white;
+}
+
+/* Modal de excluir */
+
+.produtos-card-content.claro .delet-content {
+    background: #ffffff;
+    color: #111111;
+}
+
+.produtos-card-content.claro .delet-info p {
+    color: #555555;
+}
+
+/* Modal de editar */
+
+.produtos-card-content.claro .edit-content {
+    background: #ffffff;
+    color: #111111;
+}
+
+.produtos-card-content.claro .form-input input,
+.produtos-card-content.claro .form-input select {
+    background: #f7f7f7;
+    color: #111111;
+    border-color: #d6d6d6;
+}
+
+.produtos-card-content.claro .form-input.category::after {
+    color: #111111;
+}
+
+/* =========================
+   MODAL - TEMA CLARO
+========================= */
+
+.produtos-content.claro .delet-content {
+    background: #ffffff;
+    color: #111111;
+}
+
+.produtos-content.claro .delet-info p {
+    color: #555555;
+}
+
+.produtos-content.claro .delet-info span {
+    color: #111111;
+}
+
+
+.produtos-content.claro .edit-content {
+    background: #ffffff;
+    color: #111111;
+}
+
+.produtos-content.claro .edit-top svg {
+    color: #111111;
+}
+
+.produtos-content.claro .form-input input,
+.produtos-content.claro .form-input select {
+    background: #f7f7f7;
+    color: #111111;
+    border-color: #d6d6d6;
+}
+
+.produtos-content.claro .form-input label {
+    color: #222222;
+}
+
+.produtos-content.claro .form-input.category::after {
+    color: #111111;
+}

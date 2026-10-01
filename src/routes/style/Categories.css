@@ -1,0 +1,653 @@
+.categories-content {
+    color: white;
+    min-height: 100vh;
+    background: #14181e;
+}
+
+.gerencie-categories {
+    border-bottom: 2px solid #191e259a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 130px;
+    padding-left: 20px;
+    padding-right: 60px;
+    background: #14181e;
+}
+
+.gerencie-title h2 {
+    font-size: 1.5rem;
+}
+
+.gerencie-title p {
+    color: rgb(183, 183, 183);
+    margin-top: 5px;
+}
+
+.gerencie-categories button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    gap: 10px;
+    font-size: 1.2rem;
+    background: #6440dd;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 0.3s;
+}
+
+.gerencie-categories button:hover {
+    transform: scale(1.05);
+    background: #663ede;
+}
+
+
+
+.search-categories {
+    display: flex;
+    align-items: center;
+    background: #14181e;
+    padding: 0px 10px;
+    border-bottom: 2px solid #151a20;
+}
+
+.input-search {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.input-search input {
+    width: 100%;
+    background: #0c1014;
+    border: 2px solid #2b3239;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    padding-right: 55px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-search input:focus {
+    border-color: #663ede;
+}
+
+.input-search input::placeholder {
+    color: rgb(120, 120, 120);
+}
+
+.input-search svg {
+    position: absolute;
+    right: 15px;
+    color: rgb(183, 183, 183);
+    cursor: pointer;
+}
+
+
+
+
+.categories-list {
+    padding: 30px 60px;
+    background: #0d121b;
+}
+
+.categories-list h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.categories-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+
+
+.category-card {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 25px;
+
+    background: #14181e;
+    border: 1px solid #2b3239;
+    border-radius: 10px;
+
+    transition: 0.3s;
+
+    animation: categoryEntrance 0.5s ease-out both;
+}
+
+.category-card:hover {
+    border-color: #4d3a9a;
+    transform: translateX(4px);
+    box-shadow: 0 0 12px rgba(102, 62, 222, 0.15);
+}
+
+
+@keyframes categoryEntrance {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+.category-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1d2126;
+    border: 1px solid #2b3239;
+    border-radius: 10px;
+
+    font-size: 1.5rem;
+}
+
+.category-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.category-info span {
+    color: rgb(183, 183, 183);
+    font-size: 0.85rem;
+}
+
+
+
+.category-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    background: transparent;
+    border-radius: 8px;
+
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.category-delete {
+    color: #912c2c;
+    border: 1px solid #572427;
+
+    box-shadow:
+        0 0 5px #912c2c,
+        0 0 10px rgba(145, 44, 44, 0.25);
+}
+
+.category-delete:hover {
+    color: white;
+    background: #912c2c;
+    transform: scale(1.04);
+}
+
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+
+
+
+.category-modal {
+    width: 100%;
+    max-width: 600px;
+    min-height: 300px;
+
+    background: #1d2126;
+
+    border: 1px solid #2b3239;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5);
+
+    animation: modalEntrance 0.3s ease-out;
+}
+
+
+.category-modal .edit-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 30px;
+}
+
+.category-modal .edit-top h3 {
+    font-size: 1.2rem;
+}
+
+.category-modal .edit-top svg {
+    cursor: pointer;
+    color: rgb(183, 183, 183);
+
+    transition: 0.2s;
+}
+
+.category-modal .edit-top svg:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+
+.category-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category-modal .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-modal .form-input label {
+    color: rgb(183, 183, 183);
+    font-size: 0.9rem;
+}
+
+.category-modal .form-input input {
+    padding: 15px 10px;
+
+    background: #14181e;
+
+    border: 1px solid #2b3239;
+    border-radius: 5px;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 1rem;
+}
+
+.category-modal .form-input input:focus {
+    border-color: #663ede;
+}
+
+.category-modal .form-input input::placeholder {
+    color: #666;
+}
+
+
+.category-modal .form-arrow {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.category-modal .form-arrow button {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.category-modal .form-arrow button:hover {
+    transform: scale(1.04);
+}
+
+
+
+@media (max-width: 834px) {
+
+    .gerencie-categories {
+        padding: 20px;
+        height: 80px;
+    }
+
+    .gerencie-title h2 {
+        font-size: 1.4rem;
+    }
+
+    .gerencie-title p {
+        font-size: 0.9rem;
+    }
+
+    .gerencie-categories button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .search-categories {
+        padding: 10px;
+    }
+
+    .input-search {
+        height: 80px;
+    }
+
+    .categories-list {
+        padding: 25px 15px;
+    }
+
+    .category-card {
+        padding: 15px;
+    }
+
+    .category-buttons {
+        gap: 8px;
+    }
+
+    .category-buttons button {
+        padding: 8px 10px;
+    }
+
+    .category-modal {
+        width: 95%;
+    }
+}
+
+
+
+@media (max-width: 440px) {
+
+    .gerencie-categories {
+        padding: 12px;
+        height: 65px;
+    }
+
+    .gerencie-title h2 {
+        font-size: 1.1rem;
+    }
+
+    .gerencie-title p {
+        font-size: 0.7rem;
+    }
+
+    .gerencie-categories button {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        gap: 5px;
+    }
+
+    .gerencie-categories button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+
+
+    .search-categories {
+        padding: 8px;
+    }
+
+    .input-search {
+        height: 70px;
+    }
+
+    .input-search input {
+        padding: 10px;
+        padding-right: 40px;
+        font-size: 0.8rem;
+    }
+
+    .input-search svg {
+        width: 18px;
+        height: 18px;
+        right: 10px;
+    }
+
+
+
+
+    .categories-list {
+        padding: 20px 8px;
+    }
+
+    .categories-list h3 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+
+
+
+    .category-card {
+        min-height: 75px;
+        padding: 12px;
+    }
+
+    .category-info {
+        gap: 10px;
+    }
+
+    .category-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .category-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .category-info span {
+        font-size: 0.7rem;
+    }
+
+
+
+
+    .category-buttons {
+        gap: 5px;
+    }
+
+    .category-buttons button {
+        padding: 7px;
+        font-size: 0;
+    }
+
+    .category-buttons button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+
+
+    .category-modal {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .category-modal .edit-top {
+        padding-bottom: 20px;
+    }
+
+    .category-modal .edit-top h3 {
+        font-size: 1rem;
+    }
+
+    .category-modal .form-input input {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+
+    .category-modal .form-arrow {
+        justify-content: stretch;
+    }
+
+    .category-modal .form-arrow button {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .category-buttons button {
+        align-items: center;
+        gap: 7px;
+
+        padding: 10px 15px;
+
+        background: transparent;
+        border-radius: 8px;
+
+        font-size: 0.9rem;
+        cursor: pointer;
+
+        transition: 0.2s;
+    }
+}
+
+/* =========================
+   TEMA CLARO
+========================= */
+
+.categories-content.claro {
+    color: #111;
+    background: #f8f8f8;
+}
+
+
+.categories-content.claro .gerencie-categories {
+    background: #fff;
+    border-bottom-color: #e5e7eb;
+}
+
+.categories-content.claro .gerencie-categories button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.categories-content.claro .gerencie-title p {
+    color: #666;
+}
+
+.categories-content.claro .search-categories {
+    background: #fff;
+    border-bottom-color: #e5e7eb;
+}
+
+.categories-content.claro .input-search input {
+    background: #f8f8f8;
+    border-color: #d6d6d6;
+    color: #111;
+}
+
+.categories-content.claro .input-search svg {
+    color: #666;
+}
+
+.categories-content.claro .categories-list {
+    background: #f8f8f8;
+}
+
+.categories-content.claro .category-card {
+    background: #fff;
+    border-color: #d6d6d6;
+}
+
+.categories-content.claro .category-card:hover {
+    border-color: #633ede;
+    box-shadow: 0 0 12px rgba(102, 62, 222, 0.10);
+}
+
+.categories-content.claro .category-icon {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.categories-content.claro .category-info span {
+    color: #666;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.categories-content.claro .category-modal {
+    background: #fff;
+    border-color: #d6d6d6;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.categories-content.claro .category-modal .edit-top svg {
+    color: #666;
+}
+
+.categories-content.claro .category-modal .edit-top svg:hover {
+    color: #111;
+}
+
+.categories-content.claro .category-modal .form-input label {
+    color: #555;
+}
+
+.categories-content.claro .category-modal .form-input input {
+    background: #f8f8f8;
+    border-color: #d6d6d6;
+    color: #111;
+}

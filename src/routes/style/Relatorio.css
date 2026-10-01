@@ -1,0 +1,370 @@
+.relatorio-content {
+    min-height: 100vh;
+
+    .gerencie-produtos {
+        color: white;
+    }
+}
+
+.relatorio-summary {
+    display: flex;
+    height: auto;
+    gap: 2rem;
+    padding: 20px;
+    justify-content: center;
+    animation: products-animation 0.5s ease-out both;
+}
+
+.relatorio-card {
+    border-radius: 15px;
+    border: 1px solid #545b61;
+    background: #161b21;
+    width: 330px;
+    height: 140px;
+    color: white;
+    padding: 20px;
+
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p {
+    font-size: 1.1rem;
+    color: rgb(156, 155, 155);
+}
+
+.relatorio-card h3 {
+    font-size: 2rem;
+}
+
+
+
+.svg-products svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #60549b;
+    background: #231e4e;
+    padding: 5px;
+}
+
+.svg-valor svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #f0c45d;
+    background: #213331;
+    padding: 5px;
+}
+
+.svg-estoque svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #ecc42e;
+    background: #39351d;
+    padding: 5px;
+}
+
+.svg-categories svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #6c63a4;
+    background: #25234d;
+    padding: 5px;
+}
+
+.relatorio-details {
+    display: flex;
+    padding-left: 48px;
+    gap: 2rem;
+    animation: products-animation 0.5s ease-out both;
+}
+
+.relatorio-category-chart {
+    width: 100%;
+    max-width: 700px;
+    background: #161b21;
+    border: 1px solid #545b61;
+
+    border-radius: 15px;
+    color: white;
+}
+
+.relatorio-category-chart h2 {
+    padding: 20px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #545b61;
+}
+
+.relatorio-category-chart h6 {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #545b61;
+    background: #20242f;
+    font-weight: 100;
+    color: #bbbbbc;
+}
+
+.relatorio-category-chart {
+
+
+    .category {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #545b61;
+        position: relative;
+    }
+
+    .category:last-child {
+        border-bottom: none;
+    }
+
+    .category h5 {
+        width: 150px;
+        flex-shrink: 0;
+        font-size: 1.4rem;
+        font-weight: 100;
+        text-transform: capitalize;
+    }
+
+    .category span {
+        display: block;
+        max-width: calc(100% - 210px);
+        height: 20px;
+        background: #5a41d0;
+        border-radius: 10px;
+        margin: 0 20px;
+    }
+
+    .category p {
+        position: absolute;
+        right: 25px;
+    }
+}
+
+.estoque-baixo {
+    width: 100%;
+    max-width: 690px;
+    height: fit-content;
+    border-radius: 15px;
+    background: #161b21;
+    border: 1px solid #545b61;
+    color: white;
+}
+
+.estoque-baixo h2 {
+    padding: 20px;
+    border-bottom: 1px solid #545b61;
+}
+
+.estoque-baixo .fita {
+    height: 20px;
+    background: #20242f;
+    border-bottom: 1px solid #545b61;
+}
+
+.estoque {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #545b61;
+}
+
+.estoque:last-child {
+    border-bottom: none;
+}
+
+.estoque .estoque-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.estoque-product svg {
+    color: #f5c22d;
+    width: 40px;
+    height: 40px;
+}
+
+.estoque h5 {
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.estoque p {
+    color: rgb(163, 88, 88);
+}
+
+/*ocultar valor total*/
+.hidden-value {
+    color: transparent;
+    text-decoration: line-through;
+}
+
+@media (max-width: 834px) {
+
+    .relatorio-content {
+        .gerencie-produtos {
+            display: flex;
+            color: rgb(255, 255, 255);
+            background: transparent;
+
+            button {
+                padding: 10px 40px;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .relatorio-card.estoquecard {
+        display: none;
+    }
+
+    .relatorio-card.category {
+        display: none;
+    }
+
+    .relatorio-details {
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+
+}
+
+@media (max-width: 820px) {
+    .relatorio-details {
+        flex-direction: column;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .relatorio-details {
+        flex-direction: column;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 428px) {
+    .relatorio-content {
+        .gerencie-produtos {
+            display: flex;
+            color: rgb(255, 255, 255);
+            background: transparent;
+
+            button {
+                padding: 5px 20px;
+                font-size: .7rem;
+            }
+        }
+    }
+
+
+
+    .relatorio-card.estoque {
+        display: none;
+    }
+
+    .relatorio-card.category {
+        display: none;
+    }
+
+    .relatorio-details {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+
+
+/* =========================
+   TEMA CLARO
+========================= */
+
+.relatorio-content.claro {
+    color: #111;
+    background: #fff;
+}
+
+.relatorio-content.claro .gerencie-produtos {
+    color: #000000;
+    background: #fff;
+    border-bottom-color: #d0d7de;
+}
+
+.relatorio-content.claro .gerencie-produtos button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* CARDS */
+
+.relatorio-content.claro .relatorio-card {
+    background: #ececec;
+    color: #111;
+    border-color: #d6d6d6;
+}
+
+.relatorio-content.claro .info p {
+    color: #666;
+}
+
+/* ÁREA DE DETALHES */
+
+.relatorio-content.claro .relatorio-category-chart {
+    background: #fff;
+    color: #111;
+    border-color: #d6d6d6;
+    background: #ececec;
+}
+
+.relatorio-content.claro .relatorio-category-chart h2 {
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .relatorio-category-chart h6 {
+    background: #f5f5f5;
+    color: #666;
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .relatorio-category-chart .category {
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .relatorio-category-chart .category h5 {
+    color: #222;
+}
+
+/* ESTOQUE BAIXO */
+
+.relatorio-content.claro .estoque-baixo {
+    background: #fff;
+    color: #111;
+    border-color: #d6d6d6;
+    background: #ececec;
+}
+
+.relatorio-content.claro .estoque-baixo h2 {
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .estoque-baixo .fita {
+    background: #f5f5f5;
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .estoque {
+    border-bottom-color: #d6d6d6;
+}
+
+.relatorio-content.claro .estoque h5 {
+    color: #222;
+}

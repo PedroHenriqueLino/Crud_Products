@@ -1,0 +1,20 @@
+/* =========================
+   CONFIRM DELETE - CLARO
+========================= */
+.categories-content.claro .category-card {
+    background: #ececec;
+}
+
+
+.categories-content.claro .delet-content {
+    background: #fff;
+    color: #111;
+}
+
+.categories-content.claro .delet-info p {
+    color: #555;
+}
+
+.categories-content.claro .delet-info span {
+    color: #111;
+}

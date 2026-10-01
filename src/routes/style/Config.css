@@ -1,0 +1,300 @@
+.config-content {
+
+    .gerencie-produtos {
+        color: white;
+    }
+
+    .config-form-container {
+        height: calc(100vh - 130px);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+
+        background-color: #0d1117;
+        padding: 24px;
+        border-radius: 8px;
+    }
+
+    .config-section {
+        margin-bottom: 35px;
+    }
+
+    .config-section>h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #8b949e;
+        letter-spacing: 0.5px;
+        margin: 0 0 16px 0;
+        border-bottom: 1px solid #21262d;
+        padding-bottom: 12px;
+    }
+
+    .config-field {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .config-field>label {
+        font-size: 1rem;
+        color: #c9d1d9;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+
+    .config-input-row,
+    .config-toggle-row,
+    .config-select-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .config-input-row input {
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        color: #f0f6fc;
+        padding: 8px 12px;
+        border-radius: 6px;
+        width: 180px;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+    .config-input-row span:not(.config-help) {
+        color: #8b949e;
+        font-size: 0.85rem;
+    }
+
+    .config-help {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        border: 1px solid #8b949e;
+
+        color: #8b949e;
+        font-size: 0.75rem;
+        cursor: pointer;
+    }
+
+
+
+
+    .config-toggle {
+        position: relative;
+        display: inline-block;
+
+        width: 38px;
+        height: 20px;
+
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+
+    .config-toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+
+    .config-toggle span {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: #30363d;
+
+        transition: 0.3s;
+        border-radius: 20px;
+    }
+
+    .config-toggle span::before {
+        position: absolute;
+
+        content: "";
+
+        height: 14px;
+        width: 14px;
+
+        left: 3px;
+        bottom: 3px;
+
+        background-color: #ffffff;
+
+        transition: 0.3s;
+        border-radius: 50%;
+    }
+
+    .config-toggle input:checked+span {
+        background-color: #2ea043;
+    }
+
+    .config-toggle input:checked+span::before {
+        transform: translateX(18px);
+    }
+
+
+
+
+    .config-toggle-row p {
+        color: #fff;
+        margin: 0;
+    }
+
+
+
+
+    .config-select-row select {
+        appearance: none;
+        -webkit-appearance: none;
+
+        width: 220px;
+
+        background-color: #161b22;
+        border: 1px solid #30363d;
+
+        color: #f0f6fc;
+
+        padding: 8px 12px;
+
+        border-radius: 6px;
+
+        font-size: 0.9rem;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .config-select-row>span {
+        color: #8b949e;
+    }
+
+
+
+
+    .config-actions {
+        margin-top: auto;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid #30363d;
+        padding: 20px;
+
+        margin-left: -24px;
+        margin-right: -24px;
+    }
+
+    .config-actions button {
+        height: fit-content;
+
+        background-color: #6e40c9;
+        color: #ffffff;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .config-actions button:hover {
+        background-color: #5c34a9;
+    }
+}
+
+/* =========================
+   TEMA CLARO
+========================= */
+
+.config-content.claro {
+    background-color: #f6f8fa;
+}
+
+/* HEADER */
+
+.config-content.claro .gerencie-produtos {
+    color: #24292f;
+    background: #fff;
+    border-bottom-color: #d0d7de;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.config-content.claro .gerencie-title p {
+    color: #57606a;
+}
+
+/* FORM */
+
+.config-content.claro form {
+    background-color: #fff;
+}
+
+/* SEÇÕES */
+
+.config-content.claro .config-section>h3 {
+    color: #57606a;
+    border-bottom-color: #d0d7de;
+}
+
+/* LABELS */
+
+.config-content.claro .config-field>label {
+    color: #24292f;
+}
+
+/* INPUT */
+
+.config-content.claro .config-input-row input {
+    background-color: #f6f8fa;
+    border-color: #d0d7de;
+    color: #24292f;
+}
+
+.config-content.claro .config-input-row span {
+    color: #57606a;
+}
+
+.config-content.claro .config-help {
+    border-color: #57606a;
+    color: #57606a;
+}
+
+/* TOGGLE */
+
+.config-content.claro .config-toggle span {
+    background-color: #8c959f;
+}
+
+.config-content.claro .config-toggle-row p {
+    color: #24292f;
+}
+
+/* SELECT */
+
+.config-content.claro .config-select-row select {
+    background-color: #f6f8fa;
+    border-color: #d0d7de;
+    color: #24292f;
+}
+
+.config-content.claro .config-select-row>span {
+    color: #57606a;
+}
+
+/* BOTÃO */
+
+.config-content.claro .config-actions {
+    border-top-color: #d0d7de;
+}

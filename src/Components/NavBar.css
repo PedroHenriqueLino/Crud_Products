@@ -1,0 +1,209 @@
+.nav-content {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1 !important;
+    border-right: 2px solid #151a20;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    background: #0c1219;
+}
+
+.nav-title {
+    border-bottom: 2px solid #151a20;
+    box-shadow: 0 5px 15px rgba(21, 26, 32, 0.35);
+    font-size: .9rem;
+    height: 100px;
+
+}
+
+.animation-title {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+.nav-title svg {
+    width: 55px !important;
+    height: 60px !important;
+    color: #633ede;
+
+}
+
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.nav-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    height: 60px;
+    gap: 10px;
+    cursor: pointer;
+    transition: 1s;
+    border-radius: 10px;
+}
+
+.nav li:hover {
+    background: #3735a2;
+}
+
+.nav-list a.active {
+    background: #3735a2;
+    border-radius: 10px;
+}
+
+.nav-list li svg {
+    width: 25px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.profile {
+    display: flex;
+    margin-top: auto;
+    border-top: 1px solid #151a20;
+    padding: 20px;
+    gap: 10px;
+
+    position: relative;
+}
+
+.profile-info {
+    font-weight: 100;
+}
+
+.profile img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.profile>a {
+    margin-left: auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 834px) {
+
+    .nav-content {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        border-right: none;
+        border-top: 2px solid #151a20;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-title,
+    .profile {
+        display: none;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .nav-list {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .nav-list li {
+        height: 50px;
+        justify-content: center;
+    }
+
+    .nav-list li:hover {
+        background: transparent;
+    }
+
+    .nav-list li p {
+        display: none;
+    }
+
+    .nav-list li svg {
+        width: 28px;
+        height: 28px;
+        margin-left: 0;
+    }
+
+    .nav-list a.active {
+        background: transparent;
+
+        li svg {
+            color: #633ede;
+        }
+    }
+}
+
+
+
+/* =========================
+   TEMA CLARO
+========================= */
+
+.nav-content.claro {
+    background: #f6f8fa;
+    border-right: 2px solid #d0d7de;
+    color: #24292f;
+}
+
+.nav-content.claro .nav-title {
+    border-bottom-color: #d0d7de;
+    box-shadow: 0 5px 15px rgba(31, 35, 40, 0.08);
+}
+
+.nav-content.claro .profile {
+    border-top-color: #d0d7de;
+}
+
+.nav-content.claro .profile>a {
+    color: #24292f;
+}
+
+.nav-content.claro .nav-list a.active {
+    background: #e9e3ff;
+    color: #633ede;
+}
+
+.nav-content.claro .nav-list li:hover {
+    background: #eeeaff;
+}

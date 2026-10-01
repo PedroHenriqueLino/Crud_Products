@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.navbar {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.header {
+    width: 100%;
+}
+
+.header.claro {
+    background: #fff;
+}
+
+@media (max-width: 834px) {
+
+    .navbar {
+        width: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding-bottom: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header {
+        padding-bottom: 400px;
+    }
+}
