@@ -75,7 +75,7 @@ export const ProductContextProvider = ({ children }) => {
 
     //Product
     const getData = async () => {
-        const response = await axios.get("http://localhost:3000/products")
+        const response = await axios.get("https://crud-products-x1ay.onrender.com/products")
 
         dispatch({
             type: 'GET_PRODUCTS',
@@ -88,8 +88,9 @@ export const ProductContextProvider = ({ children }) => {
     }, [])
 
     const deleteProduct = async (id) => {
-
-        await axios.delete(`http://localhost:3000/products/${id}`);
+        await axios.delete(
+            `https://crud-products-x1ay.onrender.com/products/${id}`
+        );
 
         dispatch({
             type: "DELETE_PRODUCT",
@@ -100,7 +101,7 @@ export const ProductContextProvider = ({ children }) => {
     const updateProduct = async (id, updatedProduct) => {
         try {
             const response = await axios.patch(
-                `http://localhost:3000/products/${id}`,
+                `https://crud-products-x1ay.onrender.com/products/${id}`,
                 updatedProduct
             );
 
@@ -108,15 +109,14 @@ export const ProductContextProvider = ({ children }) => {
                 type: "UPDATE_PRODUCT",
                 payload: response.data
             });
-
         } catch (error) {
             console.log(error);
         }
-    }
+    };
 
     const newProductAPI = async (newProduct) => {
         try {
-            const response = await axios.post('http://localhost:3000/products', newProduct)
+            const response = await axios.post('https://crud-products-x1ay.onrender.com/products', newProduct)
 
             dispatch({
                 type: "NEW_PRODUCT",
@@ -131,7 +131,7 @@ export const ProductContextProvider = ({ children }) => {
 
     //Category
     const getCategory = async () => {
-        const response = await axios.get("http://localhost:3000/categories")
+        const response = await axios.get("https://crud-products-x1ay.onrender.com/categories")
 
         dispatch({
             type: "GET_CATEGORY",
@@ -144,8 +144,9 @@ export const ProductContextProvider = ({ children }) => {
     }, [])
 
     const deleteCategory = async (id) => {
-
-        await axios.delete(`http://localhost:3000/categories/${id}`);
+        await axios.delete(
+            `https://crud-products-x1ay.onrender.com/categories/${id}`
+        );
 
         dispatch({
             type: "DELET_CATEGORY",
@@ -155,7 +156,7 @@ export const ProductContextProvider = ({ children }) => {
 
     const newCategoryAPI = async (newCategory) => {
         try {
-            const response = await axios.post('http://localhost:3000/categories', newCategory)
+            const response = await axios.post('https://crud-products-x1ay.onrender.com/categories', newCategory)
             dispatch({
                 type: "NEW_CATEGORY",
                 payload: response.data
